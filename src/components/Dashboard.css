@@ -1,0 +1,9 @@
+.main-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dogs-section, .cats-section {
+  display: inline-block;
+  width: 49%;
+}
