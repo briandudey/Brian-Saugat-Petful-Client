@@ -15,8 +15,8 @@ class Dashboard extends Component {
   render(){
     return(
       <div className='main-container'>
-      <CatToAdopt catsData={this.props.cats ? this.props.cats: []} />
-      <DogToAdopt dogsData={this.props.dogs ? this.props.dogs: []}/>
+      {/* <CatToAdopt catsData={this.props.cats ? this.props.cats: []} />
+      <DogToAdopt dogsData={this.props.dogs ? this.props.dogs: []}/> */}
       </div>
     )
   }

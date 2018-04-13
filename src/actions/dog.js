@@ -1,18 +1,19 @@
-export const FETCH_DOGS = 'FETCH_DOGS';
+export const FETCH_DOGS_REQUEST = 'FETCH_DOGS_REQUEST';
+export const FETCH_DOGS_SUCESS = 'FETCH_DOGS_SUCCESS';
+export const FETCH_DOGS_FAILURE = 'FETCH_DOGS_FAILURE';
 
-export function getDogs() {
-  return {
-    type: FETCH_DOGS,
-    data: {
-      imageURL:
-        'http://www.dogster.com/wp-content/uploads/2015/05/Cute%20dog%20listening%20to%20music%201_1.jpg',
-      imageDescription:
-        'A smiling golden-brown golden retreiver listening to music.',
-      name: 'Zeus',
-      sex: 'Male',
-      age: 3,
-      breed: 'Golden Retriever',
-      story: 'Owner Passed away'
-    }
-  };
+export const getDogs = () => dispatch => {
+  dispatch({type: FETCH_DOGS_REQUEST})
+  fetch('https://www.mocky.io/v2/5185415ba171ea3a00704eed')
+  .then(results => {
+    return results.json()
+  })
+  .then(data => {
+    return dispatch({type: FETCH_DOGS_SUCESS, payload:data})
+  })
+  .catch(err => {
+    return dispatch ({type: FETCH_DOGS_FAILURE, payload:err})
+  })
+  
+  
 }
