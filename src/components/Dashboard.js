@@ -13,10 +13,11 @@ class Dashboard extends Component {
   }
 
   render(){
+    console.log(this.props)
     return(
       <div className='main-container'>
-      {/* <CatToAdopt catsData={this.props.cats ? this.props.cats: []} />
-      <DogToAdopt dogsData={this.props.dogs ? this.props.dogs: []}/> */}
+      <CatToAdopt recevieCats={this.props.getCats} deleteCat={this.props.deleteCat}catsData={this.props.cats ? this.props.cats: []} />
+      <DogToAdopt recevieDogs={this.props.getDogs} deleteDog={this.props.deleteDog}dogsData={this.props.dogs ? this.props.dogs: []}/>
       </div>
     )
   }

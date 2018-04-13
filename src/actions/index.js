@@ -1,2 +1,2 @@
-export {getDogs} from './dog'
-export {getCats} from './cat'
+export {getDogs, deleteDog} from './dog'
+export {getCats, deleteCat} from './cat'

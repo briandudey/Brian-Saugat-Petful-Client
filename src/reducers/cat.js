@@ -1,4 +1,4 @@
-import { FETCH_CATS_REQUEST, FETCH_CATS_SUCESS, FETCH_CATS_FAILURE } from '../actions/cat';
+import { FETCH_CATS_REQUEST, FETCH_CATS_SUCCESS, FETCH_CATS_FAILURE, DELETE_CAT_REQUEST, DELETE_CAT_SUCCESS, DELETE_CAT_FAILURE } from '../actions/cat';
 
 const initialState = {
   data: null,
@@ -7,18 +7,33 @@ const initialState = {
 };
 
 export default function reducer(state = initialState, action) {
-  console.log(action);
+
   switch (action.type) {
     case FETCH_CATS_REQUEST: return {
       ...state,
       loading: true
     }
-    case FETCH_CATS_SUCESS:
+    case FETCH_CATS_SUCCESS:
       return {
         ...state,
         data: [action.payload]
       }
       case FETCH_CATS_FAILURE: 
+      return {
+        ...state,
+        error: action.payload
+      }
+      case DELETE_CAT_REQUEST: 
+      return {
+        ...state,
+        loading: true
+      }
+      case DELETE_CAT_SUCCESS:
+      return {
+        ...state,
+        data: [action.payload]
+      }
+      case DELETE_CAT_FAILURE:
       return {
         ...state,
         error: action.payload
